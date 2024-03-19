@@ -72,38 +72,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------ */
-#root {
-  display: flex;
-  justify-content: center;
-}
-
-.App {
-  width: 800px;
-  padding-top: 20px;
-}
-
-.post {
-  display: flex;
-  padding: 15px;
+.myBtn {
+  padding: 5px 10px;
+  color: teal;
+  font-size: 14px;
+  background-color: transparent;
   border: 2px solid teal;
-  border-radius: 20px;
-  justify-content: space-between;
-  margin: 15px 0;
-  align-items: center;
+  border-radius: 10px;
 }
-.post__head {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-h1 {
-  font-weight: 700;
-  font-size: 36px;
-  text-align: center;
-}
-
-.noPosts {
-  text-align: center;
-  font-weight: 700;
-  font-size: 36px;
+.myBtn:hover {
+  transition: all 0.1s ease;
+  background-color: teal;
+  color: white;
 }
