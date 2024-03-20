@@ -1,0 +1,53 @@
+@import '../../../template.scss';
+
+.myModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: none;
+   background-color: #00000069;
+}
+
+.myModalContent {
+   padding: 25px;
+   background-color: #fff;
+   border-radius: 16px;
+   min-width: 250px;
+}
+
+.myModalContent.active {
+   position: relative;
+   transition: all 1s;
+   animation: 0.2s ease 0s 1 normal forwards modalContent;
+}
+
+@keyframes modalContent {
+   0% {
+      opacity: 0;
+      top: -20px;
+   }
+
+   100% {
+      opacity: 1;
+      top: 0;
+   }
+}
+
+@keyframes modal {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+.myModal.active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   animation: 0.2s ease 0s 1 normal forwards modal;
+}

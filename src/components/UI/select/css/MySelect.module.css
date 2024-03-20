@@ -73,9 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------------------------------------------------------ */
 .selectContainer {
-  margin-top: 20px;
-  border-top: 1px solid teal;
-  padding-top: 20px;
+  margin-top: 10px;
   text-align: right;
 }
 .selectContainer select {

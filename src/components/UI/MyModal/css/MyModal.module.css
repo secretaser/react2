@@ -72,38 +72,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------ */
-#root {
+.myModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4117647059);
+}
+
+.myModalContent {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 16px;
+  min-width: 250px;
+}
+
+.myModalContent.active {
+  position: relative;
+  transition: all 1s;
+  animation: 0.2s ease 0s 1 normal forwards modalContent;
+}
+
+@keyframes modalContent {
+  0% {
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.myModal.active {
   display: flex;
   justify-content: center;
-}
-
-.App {
-  width: 800px;
-  padding-top: 20px;
-}
-
-.post {
-  display: flex;
-  padding: 15px;
-  border: 2px solid teal;
-  border-radius: 20px;
-  justify-content: space-between;
-  margin: 15px 0;
   align-items: center;
-}
-.post__head {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.postListTitle {
-  font-weight: 700;
-  font-size: 36px;
-  text-align: center;
-}
-
-.noPosts {
-  text-align: center;
-  font-weight: 700;
-  font-size: 36px;
+  animation: 0.2s ease 0s 1 normal forwards modal;
 }
