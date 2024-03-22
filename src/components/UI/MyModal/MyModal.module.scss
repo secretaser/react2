@@ -18,6 +18,7 @@
 }
 
 .myModalContent.active {
+   background-color: #fff;
    position: relative;
    transition: all 1s;
    animation: 0.2s ease 0s 1 normal forwards modalContent;
