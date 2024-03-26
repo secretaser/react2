@@ -72,20 +72,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------ */
-#root {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.App {
+.postsPage {
   width: 800px;
   padding-top: 20px;
   margin-bottom: 10px;
 }
 
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+.postList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.post {
+  display: flex;
+  gap: 10px;
+  line-height: 125%;
+  padding: 15px;
+  border: 2px solid teal;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.15s;
+  align-self: stretch;
+}
+.post__head {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.post__btns {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.postListTitle {
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.post-enter {
+  transform: translateX(-250px);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.post-enter-active {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.post-exit {
+  opacity: 1;
+}
+
+.post-exit-active {
+  transform: translateX(250px);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.noPosts {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
 }

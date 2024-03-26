@@ -1,0 +1,96 @@
+@import '../../../template.scss';
+
+$secondColor: rgb(255, 250, 220);
+
+.navbar {
+   height: 50px;
+   width: 100%;
+   background-color: teal;
+   // border-bottom: 1px solid teal;
+
+
+   &__links {
+      height: 100%;
+      margin: 0 auto;
+      width: 800px;
+      display: flex;
+      justify-content: space-between;
+
+   }
+
+   &__left {
+      display: flex;
+   }
+
+   &__right {
+      display: flex;
+   }
+
+   &__logout {
+      background-color: transparent;
+      position: relative;
+      z-index: 10;
+      padding: 0 10px;
+      transition: all 0.2s ease;
+      color: $secondColor;
+      text-transform: uppercase;
+      font-weight: 700;
+      overflow: hidden;
+
+      &::before {
+         z-index: -1;
+         transition: all 0.2s ease;
+         content: '';
+         width: 200px;
+         height: 200px;
+         background-color: $secondColor;
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform-origin: left top;
+         transform: rotate(135deg);
+      }
+   }
+
+   &__logout:hover {
+      color: teal;
+
+      &::before {
+         left: 135%;
+      }
+   }
+
+   &__link {
+      position: relative;
+      z-index: 10;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+      color: $secondColor;
+      text-transform: uppercase;
+      font-weight: 700;
+      overflow: hidden;
+
+      &::before {
+         z-index: -1;
+         transition: all 0.2s ease;
+         content: '';
+         width: 100%;
+         height: 100%;
+         background-color: $secondColor;
+         position: absolute;
+         top: 100%;
+         left: 0;
+      }
+   }
+
+   &__link:hover {
+      color: teal;
+
+      &::before {
+         top: 0;
+      }
+   }
+}

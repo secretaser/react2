@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const useFetching = (callback) => {
-   const [isLoading, setIsLoading] = useState(false)
+   const [isLoading, setIsLoading] = useState(true) // могут быть проблемесы из-за тру
    const [error, setError] = useState('')
 
    const fetching = async (...args) => {
