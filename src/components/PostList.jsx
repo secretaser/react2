@@ -7,28 +7,26 @@ const PostList = ({ posts, title, remove, fetchPosts, isPostsLoading, postError 
 
    return (
       <div>
-         {isPostsLoading ?
-            <Loader />
+         {isPostsLoading && posts.length == 0 ?
+            <p className='postListTitle'>Posts</p>
             :
             <p className='postListTitle'>{postError ? `Error "${postError}" occured!` : posts.length ? 'Posts' : 'No posts found!'}</p>
          }
-         {/* <TransitionGroup className='postList'> */}
-         <div className='postList'>
+         <TransitionGroup className='postList'>
             {posts.map((post, index) =>
-               // <CSSTransition
-               // key = { post.id }
-               //       timeout = { 150}
-               //       classNames = "post" >
-               <PostItem
+               <CSSTransition
                   key={post.id}
-                  remove={remove}
-                  number={index + 1}
-                  post={post}
-               />
-               // </CSSTransition>
+                  timeout={150}
+                  classNames="post" >
+                  <PostItem
+                     key={post.id}
+                     remove={remove}
+                     number={index + 1}
+                     post={post}
+                  />
+               </CSSTransition>
             )}
-         </div>
-         {/* </TransitionGroup> */}
+         </TransitionGroup>
       </div>
    );
 }
