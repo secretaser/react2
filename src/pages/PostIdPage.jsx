@@ -19,8 +19,6 @@ const PostIdPage = () => {
       setComments(response.data);
    })
 
-
-
    const params = useParams()
    useEffect(() => {
       fetchPostById(params.id)

@@ -15,8 +15,13 @@ export default class PostService {
       const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${post}`)
       return response
    }
-   static async getCommentsByPostId(post) {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${post}/comments`)
+   static async getCommentsByPostId(post, limit = 1) {
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${post}/comments`,
+         {
+            params: {
+               _limit: limit,
+            }
+         })
       return response
    }
 }

@@ -9,22 +9,32 @@
 .postList {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: stretch;
    gap: 15px;
    margin-bottom: 15px;
 }
 
-.post {
-   display: flex;
-   gap: 10px;
+.container {
    line-height: 125%;
    padding: 15px;
    border: 2px solid teal;
    border-radius: 20px;
+   background-color: #fff;
+
+}
+
+.post {
+   display: flex;
+   gap: 20px;
+   line-height: 125%;
+   padding: 15px;
+   // border-bottom: 2px solid teal;
    justify-content: space-between;
-   align-items: center;
+   align-items: start;
    transition: all 0.15s;
    align-self: stretch;
+
+   // margin-bottom: 15px;
 
    &__head {
       font-weight: 700;
@@ -36,6 +46,18 @@
       align-items: stretch;
       flex-direction: column;
       gap: 10px;
+   }
+
+   &__content {
+
+      font-size: 16px;
+   }
+
+   &__comments {
+      display: flex;
+      flex-direction: column;
+      // gap: 15px;
+
    }
 }
 

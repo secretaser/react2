@@ -1,0 +1,49 @@
+@import "../../../template.scss";
+
+.button {
+   width: 24px;
+   height: 24px;
+   // border-radius: 50%;
+   // border: 1px solid teal;
+   background-color: #fff;
+   position: relative;
+   transition: all 0.2s ease;
+
+   &::before {
+      content: '';
+      height: 12px;
+      width: 2px;
+      background-color: teal;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 6px;
+      left: 11px;
+      transition: all 0.2s ease;
+
+   }
+
+   &::after {
+      content: '';
+      height: 12px;
+      width: 2px;
+      background-color: teal;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 6px;
+      left: 11px;
+      transition: all 0.2s ease;
+   }
+
+   &:hover {
+
+      &::before {
+         background-color: rgb(175, 45, 45);
+         transform: rotate(405deg);
+      }
+
+      &::after {
+         background-color: rgb(175, 45, 45);
+         transform: rotate(315deg);
+      }
+   }
+}

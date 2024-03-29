@@ -72,21 +72,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------ */
-#root {
-  background-color: #fafafa;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.button {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid teal;
+  background-color: #fff;
+  position: relative;
+  transition: all 0.2s ease;
 }
-
-.App {
-  width: 800px;
-  padding-top: 20px;
-  margin-bottom: 10px;
+.button::before {
+  content: "";
+  height: 15px;
+  width: 2px;
+  background-color: teal;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  transition: all 0.2s ease;
 }
-
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+.button::after {
+  content: "";
+  height: 15px;
+  width: 2px;
+  background-color: teal;
+  position: absolute;
+  transform: rotate(-45deg);
+  top: 4px;
+  left: 10px;
+  transition: all 0.2s ease;
+}
+.button:hover {
+  background-color: rgb(175, 45, 45);
+  border: 2px solid rgb(175, 45, 45);
+}
+.button:hover::before {
+  background-color: #fff;
+  transform: rotate(405deg);
+}
+.button:hover::after {
+  background-color: #fff;
+  transform: rotate(315deg);
 }

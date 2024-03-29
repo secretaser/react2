@@ -81,20 +81,26 @@ h1, h2, h3, h4, h5, h6 {
 .postList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 15px;
   margin-bottom: 15px;
 }
 
-.post {
-  display: flex;
-  gap: 10px;
+.container {
   line-height: 125%;
   padding: 15px;
   border: 2px solid teal;
   border-radius: 20px;
+  background-color: #fff;
+}
+
+.post {
+  display: flex;
+  gap: 20px;
+  line-height: 125%;
+  padding: 15px;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   transition: all 0.15s;
   align-self: stretch;
 }
@@ -107,6 +113,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: stretch;
   flex-direction: column;
   gap: 10px;
+}
+.post__content {
+  font-size: 16px;
+}
+.post__comments {
+  display: flex;
+  flex-direction: column;
 }
 
 .postListTitle {

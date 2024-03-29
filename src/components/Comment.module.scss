@@ -1,0 +1,35 @@
+@import "../template.scss";
+
+.content {
+   margin: 0 20px;
+   border-top: 1.5px solid teal;
+   padding: 10px;
+   display: flex;
+   gap: 20px;
+   justify-content: space-between;
+}
+
+.authorInfo {
+   display: flex;
+   gap: 10px;
+   // align-items: ;
+}
+
+.name {
+   font-weight: 700;
+   text-transform: capitalize;
+}
+
+.email {
+   text-transform: lowercase;
+   color: rgba(0, 128, 128, 0.719);
+   font-size: 12px;
+}
+
+.body {}
+
+.text {
+   flex: 1 1 50%;
+   // border: 1px solid #000;
+
+}

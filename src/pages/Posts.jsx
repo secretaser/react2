@@ -83,7 +83,7 @@ const Posts = () => {
 
          <PostList remove={removePost} postError={postError} isPostsLoading={isPostsLoading} fetchPosts={fetchPosts} posts={sortedSearchedPosts} />
          {isPostsLoading && <Loader />}
-         <div ref={lastElement} style={{ height: 0, background: 'red' }}></div>
+         <div ref={lastElement} style={{ height: 50, background: 'transparent' }}></div>
          {/* <Pagination totalPages={totalPages} page={page} changePage={changePage} /> */}
       </div>
    );

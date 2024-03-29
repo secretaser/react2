@@ -72,21 +72,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------------------------------------------------------ */
-#root {
-  background-color: #fafafa;
+.content {
+  margin: 0 20px;
+  border-top: 1.5px solid teal;
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
 }
 
-.App {
-  width: 800px;
-  padding-top: 20px;
-  margin-bottom: 10px;
+.authorInfo {
+  display: flex;
+  gap: 10px;
 }
 
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+.name {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.email {
+  text-transform: lowercase;
+  color: rgba(0, 128, 128, 0.719);
+  font-size: 12px;
+}
+
+.text {
+  flex: 1 1 50%;
 }
