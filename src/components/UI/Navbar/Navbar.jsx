@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import s from './css/Navbar.module.css'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../context';
 
 function Navbar() {
@@ -17,8 +17,8 @@ function Navbar() {
          {isAuth ?
             <div className={s.navbar__links}>
                <div className={s.navbar__left}>
-                  <Link className={s.navbar__link} to="/posts">Posts</Link>
-                  <Link className={s.navbar__link} to="/about">About</Link>
+                  <NavLink className={({ isActive }) => isActive ? s.navbar__linkActive : s.navbar__link} to="/posts">Posts</NavLink>
+                  <NavLink className={({ isActive }) => isActive ? s.navbar__linkActive : s.navbar__link} to="/about">About</NavLink>
                </div>
                <div className={s.navbar__right}>
                   <button onClick={() => logout()} className={s.navbar__logout}>Log out</button>

@@ -13,12 +13,13 @@ const PostItem = ({ number, post, remove }) => {
    const [limit, setLimit] = useState(1)
    const [offset, setOffset] = useState(0)
    const [moreButton, setMoreButton] = useState(true)
-   const [comment, setComment] = useState({ postId: post.id, id: comments.length + 1, name: 'You', email: 'ivan.suv99@gmail.com', body: '' })
+   const [comment, setComment] = useState('')
 
    const [fetchComments, isCommentsLoading, commentsError] = useFetching(async (id) => {
       const response = await PostService.getCommentsByPostId(id, limit)
       const newComments = response.data.slice(offset)
       setComments([...comments, ...newComments]);
+      setOffset(limit)
    })
 
    useEffect(() => {
@@ -38,14 +39,17 @@ const PostItem = ({ number, post, remove }) => {
 
    const addNewComment = (e) => {
       e.preventDefault()
-      if (comment.body) {
+      if (comment) {
          setOffset(1)
          const newComment = {
-            ...comment,
+            postId: post.id,
+            name: 'You',
+            email: 'ivan.suv99@gmail.com',
+            body: comment,
             id: Date.now(),
-
          }
          setComments([newComment, ...comments])
+         setComment('')
       }
    }
 
@@ -70,8 +74,8 @@ const PostItem = ({ number, post, remove }) => {
          </div>
          <div className="post__newComment">
             <form>
-               <MyInput type="text" placeholder='Type in your comment...' value={comment.body} onChange={e => setComment({ ...comment, body: e.target.value })} />
-               <MyButton onClick={addNewComment}></MyButton>
+               <MyInput type="text" placeholder='Type in your comment...' value={comment} onChange={e => setComment(e.target.value)} />
+               <MyButton onClick={addNewComment}>Send</MyButton>
             </form>
          </div>
       </div>

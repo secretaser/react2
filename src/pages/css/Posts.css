@@ -92,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid teal;
   border-radius: 20px;
   background-color: #fff;
+  transition: all 0.1s ease;
 }
 
 .post {
@@ -114,12 +115,21 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   gap: 10px;
 }
+.post__loadMore {
+  margin: 0 20px;
+}
 .post__content {
   font-size: 16px;
 }
 .post__comments {
   display: flex;
   flex-direction: column;
+}
+.post__newComment form {
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .postListTitle {

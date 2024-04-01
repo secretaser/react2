@@ -20,7 +20,7 @@
    border: 2px solid teal;
    border-radius: 20px;
    background-color: #fff;
-
+   transition: all 0.1s ease;
 }
 
 .post {
@@ -28,13 +28,10 @@
    gap: 20px;
    line-height: 125%;
    padding: 15px;
-   // border-bottom: 2px solid teal;
    justify-content: space-between;
    align-items: start;
    transition: all 0.15s;
    align-self: stretch;
-
-   // margin-bottom: 15px;
 
    &__head {
       font-weight: 700;
@@ -48,16 +45,27 @@
       gap: 10px;
    }
 
-   &__content {
+   &__loadMore {
+      margin: 0 20px;
+   }
 
+   &__content {
       font-size: 16px;
    }
 
    &__comments {
       display: flex;
       flex-direction: column;
-      // gap: 15px;
 
+   }
+
+   &__newComment {
+      form {
+         margin: 0 20px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
    }
 }
 

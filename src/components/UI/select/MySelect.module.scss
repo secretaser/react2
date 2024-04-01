@@ -2,11 +2,12 @@
 
 .selectContainer {
    margin-top: 10px;
-   // padding-top: 20px;
    text-align: right;
+   color: teal;
 
    select {
       border: 2px solid teal;
+      color: teal;
       padding: 5px;
       border-radius: 10px;
       cursor: pointer;

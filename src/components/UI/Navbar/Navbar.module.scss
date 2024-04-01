@@ -84,13 +84,40 @@ $secondColor: rgb(255, 250, 220);
          top: 100%;
          left: 0;
       }
+
+      &:hover {
+         color: teal;
+
+         &::before {
+            top: 0;
+         }
+      }
    }
 
-   &__link:hover {
+   &__linkActive {
+      position: relative;
+      z-index: 10;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
       color: teal;
+      text-transform: uppercase;
+      font-weight: 700;
+      overflow: hidden;
 
       &::before {
+         z-index: -1;
+         transition: all 0.2s ease;
+         content: '';
+         width: 100%;
+         height: 100%;
+         background-color: $secondColor;
+         position: absolute;
          top: 0;
+         left: 0;
       }
+
    }
 }
